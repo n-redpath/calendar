@@ -1,0 +1,31 @@
+body.vibe{background-color: lightseagreen; text-align: center; border-color:seagreen; border-width: 5px;}
+
+
+.background{
+  color: lightseagreen;
+
+}
+
+header{
+  border: 4px;; 
+  padding: 20px; 
+  border-color: seagreen; 
+}
+
+h1{color: white; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  background-color: seagreen;
+  padding: 5px;
+  align-items: center;
+  object-fit: contain;
+}
+.grid-item {
+  background-color:rgb(163, 230, 226);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}

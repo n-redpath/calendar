@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Calendar Page</title>
+<script src="https://classes.engineering.wustl.edu/cse330/content/calendar.min.js"></script>
+<link rel="stylesheet" href="calendar_style.css"> 
+</head>
+<body class="vibe">
+<form action="deleteEvent_ajax.php" method="post">
+	<input type="hidden" name="tokenDelete" id="tokenDelete" value="<?php echo $_SESSION['token'];?>"/>
+</form>
+<form action="editEvent_ajax.php.php" method="post">
+	<input type="hidden" name="tokenEdit" id="tokenEdit" value="<?php echo $_SESSION['token'];?>"/>
+</form>
+<form action="addEvent_ajax.php" method="post">
+	<input type="hidden" name="tokenAdd" id="tokenAdd" value="<?php echo $_SESSION['token'];?>"/>
+</form>
+<div id = "loginStuff">
+Returning User? 
+<input type="text" id="username" placeholder="Username" />
+<input type="password" id="password" placeholder="Password" />
+<button id="login_btn">Log In</button>
+<br><br><br>
+New User? Register here:
+
+<!-- text box for new user -->
+<input type="text" name="newUser" id="newUser" placeholder = "Username"> 
+
+<!-- text box for new password -->
+<input type="password" name="newPassword" id="newPassword" placeholder="Password"> 
+<input type="submit" name="Create" value="Create" id = "newUserButton">
+<br><br>
+</div>
+<div id= "eventStuff">
+Create New Event:
+<!--text box for event name, date, time-->
+<input type="text" name="eventName" id="eventName" placeholder="Name">
+<input type="date" name="eventDate" id="eventDate"> 
+<input type="time" name="eventTime" id="eventTime"> 
+<br>
+<p>Optional:</p>
+<!--text boxes for category and for inviting other users-->
+<input type="text" name ="selectCategory" id="category" placeholder="Category">
+<input type="text" name="invite" id = "inviteUser" placeholder="Invite User by Username">
+<button id="createEvent_button">Create Event</button>
+<br> <br>
+Delete Event:
+<!--text boxes for information needed to delete an event-->
+<input type="text" name="eventNameDelete" id="eventNameDelete" placeholder="Name">
+<input type="date" name="eventDateDelete" id="eventDateDelete"> 
+<!-- <input type="time" name="eventTimeDelete" id="eventTimeDelete" placeholder="Time">  -->
+<button id="deleteEvent_button">Delete Event</button>
+<br><br>
+Edit Event:
+<br><br>
+<!--text boxes for modifying a pre-existing event-->
+Original Information:
+<br>
+<input type="text" name="eventNameToEdit" id="eventNameToEdit" placeholder="Original Name">
+<input type="date" name="eventDateToEdit" id="eventDateToEdit" > 
+<input type="time" name="eventTimeToEdit" id="eventTimeToEdit" > 
+<input type="text" name ="selectCategoryEdit" id="categoryToEdit" placeholder="Original Category">
+<input type="text" name="shareEdit" id = "shareEdit" placeholder="Shared User">
+
+
+<br>
+New Information:
+<br>
+<input type="text" name="eventNameNew" id="eventNameNew" placeholder="New Name">
+<input type="date" name="eventDateNew" id="eventDateNew"> 
+<input type="time" name="eventTimeNew" id="eventTimeNew">
+<input type="text" name ="selectCategoryNew" id="categoryNew" placeholder="New Category">
+<input type="text" name="inviteNew" id = "inviteUserNew" placeholder="Invite Another User">
+<br>
+<button id="editEvent_button">Edit Event</button>
+
+
+<br>
+<br>
+<!--log out button-->
+Log Out
+<br>
+<button id="logout_button">Logout</button>
+<!--text field with option to show categories-->
+<br><br>
+<input type="text" name="showCategories" id="showCategories" placeholder="Show Category">
+<button id="sendCategory">Show this category</button>
+<div id="message">Please reclick the show categories button when changing months
+	<br>
+	Click the button again to revert to all events
+</div>
+
+</div>
+ 
+
+<!--Setting up the month and change buttons-->
+<div class="header" id="month">
+	<div id="monthName">Month: <div id="yearName"></div> </div>
+	<button id="prev_month_btn">Previous Month</button>
+	<button id="next_month_btn">Next Month</button>
+	<br><br>
+	<button id="prev_year_btn">Previous Year</button>
+	<button id="next_year_btn">Next Year</button>
+</div>
+
+
+<!--grid where we fully store the events-->
+<div id="calendar"  class="grid-container">
+
+
+</div>
+
+<div class="week" id="weeks"></div>
+
+
+<!--JavaScript Source-->
+<script src ="ajax.js"></script>
+</body>
+</html>
