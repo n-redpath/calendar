@@ -1,8 +1,8 @@
 # CSE330
-466259
-458234
+Calendar application for creative programming and rapid prototype development course. 
+Class partner and collaborator: Samm Keiser. 
 
-Link to Calendar:
+Link to Calendar (note: aws account deactivated, link no longer active.):
 http://ec2-18-219-184-237.us-east-2.compute.amazonaws.com/~sammkaiser/module5-group-module5-466259-458234/login_page.html
 
 For the creative portion, we did three things:
